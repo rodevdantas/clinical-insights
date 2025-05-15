@@ -1,0 +1,11 @@
+pandas
+seaborn
+os
+matplotlib.plyplot
+faker
+random
+os
+scikit-learn
+python-dotenv
+sqlalchemy
+pathlib
