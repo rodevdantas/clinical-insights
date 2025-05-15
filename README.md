@@ -39,16 +39,16 @@ Power BI - interactive data visualization and dashboard creation.
 ## Project Structure
 
 clinical_insights/
-> src/
-  > data_preparation/    # Scripts for data generation
-  > database/            # Script for MySQL integration
-  > ml/                  # Cluster analysis
-> data/                  # Exported CSV files
-> figures/               # Plots (ML)
-> powerbi_reports/       # Power BI dashboard file
-> cluster_insights.md    # Supplementary document with cluster analysis insights
-> requirements.txt       # List of dependencies
-> README.md              # Project documentation
+src/
+  data_preparation/    # Scripts for data generation
+  database/            # Script for MySQL integration
+  ml/                  # Cluster analysis
+data/                  # Exported CSV files
+figures/               # Plots (ML)
+powerbi_reports/       # Power BI dashboard file
+cluster_insights.md    # Supplementary document with cluster analysis insights
+requirements.txt       # List of dependencies
+README.md              # Project documentation
 
 
 ## Insights Generated
