@@ -5,7 +5,6 @@ Todos os dados são artificiais e foram criados exclusivamente para fins educaci
 
 Este documento apresenta os resultados da etapa de **clusterização de pacientes** com base em suas características demográficas e de plano de saúde. A análise foi realizada utilizando o algoritmo KMeans, com dados fictícios gerados previamente.
 
----
 
 ## Objetivo da Clusterização
 
@@ -21,7 +20,6 @@ O objetivo principal é identificar padrões ocultos que possam ser úteis para:
 - Personalização de serviços
 - Análise exploratória da base de pacientes
 
----
 
 ## Etapas Realizadas
 
@@ -60,7 +58,6 @@ Após aplicação do algoritmo com k = 4, obteve-se a seguinte média dos atribu
 - Boxplot para a variável Idade por cluster.
 - Countplots para as variáveis Sexo e Planos por cluster.
 
----
 
 ## Conclusões
 
@@ -74,7 +71,6 @@ A análise de clusters possibilitou a descoberta de **quatro perfis distintos** 
 
 Este processo não visa prever doenças ou comportamentos diretamente, mas agrupar indivíduos com características semelhantes, permitindo futuras análises mais profundas ou aplicações com modelos supervisionados.
 
----
 
 ## Visualização com PCA
 
