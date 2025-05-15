@@ -1,89 +1,77 @@
-# Segmentação de Pacientes com Clustering e PCA
-Todos os dados são artificiais e foram criados exclusivamente para fins educacionais e de portfólio.
+# Patient Segmentation with Clustering and PCA
+All data is artificial and was created exclusively for educational and portfolio purposes.
 
-## Descrição
+## Description
+This document presents the results of the patient clustering step based on their demographic and health plan characteristics. The analysis was performed using the KMeans algorithm, with previously generated fictitious data.
 
-Este documento apresenta os resultados da etapa de **clusterização de pacientes** com base em suas características demográficas e de plano de saúde. A análise foi realizada utilizando o algoritmo KMeans, com dados fictícios gerados previamente.
+## Objective of the Clustering
+Group patients with similar profiles using the following variables:
 
+- Age
+- Gender
+- Health plan
 
-## Objetivo da Clusterização
+The main objective is to identify hidden patterns that may be useful for:
 
-Agrupar pacientes com perfis semelhantes, utilizando as seguintes variáveis:
+- Strategic segmentation
+- Service personalization
+- Exploratory analysis of the patient base
 
-- Idade
-- Sexo 
-- Plano de saúde 
+## Steps Performed
 
-O objetivo principal é identificar padrões ocultos que possam ser úteis para:
+### 1. Preprocessing
+- Conversion of birth date into age.
+- Standardization of numerical variables using StandardScaler.
+- Encoding of categorical variables.
 
-- Segmentação estratégica
-- Personalização de serviços
-- Análise exploratória da base de pacientes
+### 2. Choosing the Number of Clusters
+- The Elbow Method was used to evaluate the inertia variation for different values of k (from 1 to 10).
+- A clear inflection point was identified at k=4, which was the value used for clustering.
 
+### 3. Cluster Results
+After applying the algorithm with k = 4, the following average attributes per cluster were obtained:
 
-## Etapas Realizadas
-
-### 1. Pré-processamento
-
-- Conversão da data de nascimento em idade.
-- Padronização das variáveis numéricas com **StandardScaler**.
-- Codificação das variáveis categóricas.
-
-### 2. Escolha do Número de Clusters
-
-- O método do cotovelo (Elbow Method) foi utilizado para avaliar a variação da inércia entre diferentes valores de k (de 1 a 10).
-- Foi identificado um ponto de inflexão evidente em k=4, sendo este o valor utilizado na clusterização.
-
-### 3. Resultados dos Clusters
-
-Após aplicação do algoritmo com k = 4, obteve-se a seguinte média dos atributos por cluster:
-
-| Cluster | Idade Média | Sexo (0=Fem, 1=Masc) | Plano de Saúde (0=Popular, 1=Executivo, 2=Premium) |
+| Cluster | Average Age | Gender (0=Fem, 1=Male) | Health Plan (0=Basic, 1=Executive, 2=Premium) |
 |---------|-------------|---------------|--------------|
 | 0       | 70.20       | 1.00          | 0.25         |
 | 1       | 26.91       | 1.00          | 0.20         |
 | 2       | 48.54       | 0.22          | 1.48         |
 | 3       | 48.52       | 0.00          | 0.00         |
 
-**Interpretação dos Grupos:**
+**Cluster Interpretation:**
 
-- **Cluster 0:** Homens idosos com predominância do plano Popular.
-- **Cluster 1:** Homens jovens com predominância do plano Popular.
-- **Cluster 2:** Majoritariamente mulheres de meia idade com predominância de planos Premium e Executivo.
-- **Cluster 3:** Mulheres de meia idade apenas com plano Popular.
+**Cluster 0: Elderly men with predominance of the Basic plan.**
+**Cluster 1: Young men with predominance of the Basic plan.**
+**Cluster 2: Mostly middle-aged women with predominance of Premium and Executive plans.**
+**Cluster 3: Middle-aged women only with the Basic plan.**
 
-### 4. Visualizações
+### 4. Visualizations
+- Elbow Method chart to justify the k.
+- Boxplot for the Age variable by cluster.
+- Countplots for the Gender and Plan variables by cluster.
 
-- Gráfico do Elbow Method para justificativa do k.
-- Boxplot para a variável Idade por cluster.
-- Countplots para as variáveis Sexo e Planos por cluster.
+## Conclusions
+The clustering was effective in grouping patients with similar characteristics, revealing profiles that can be explored for strategic decisions. This segmentation can also be integrated into future analyses, such as prediction of plan adherence or detection of behavior patterns by group.
 
+The cluster analysis enabled the discovery of four distinct profiles among the clinic’s patients. This segmentation can be used as a basis for:
 
-## Conclusões
+- Targeted service and communication strategies
+- Analysis of health plan distribution by profile
+- Resource prioritization based on the most relevant groups
 
-A clusterização foi eficaz em agrupar pacientes com características similares, revelando perfis que podem ser explorados para decisões estratégicas. Essa segmentação também pode ser integrada a análises futuras, como predição de adesão a planos ou detecção de padrões de comportamento por grupo.
+This process does not aim to predict diseases or behaviors directly, but to group individuals with similar characteristics, allowing for deeper future analyses or applications with supervised models.
 
-A análise de clusters possibilitou a descoberta de **quatro perfis distintos** entre os pacientes da clínica. Essa segmentação pode ser usada como base para:
+## Visualization with PCA
+To facilitate the interpretation of the formed clusters, I applied the Principal Component Analysis (PCA) technique, reducing the data dimensionality from three variables (age, gender, health_plan) to two main components (PCA1 and PCA2).
 
-- Estratégias de atendimento e comunicação direcionadas
-- Análise de distribuição dos planos de saúde por perfil
-- Priorização de recursos com base nos grupos mais relevantes
+The main objective was to generate a two-dimensional visualization of the groups identified by the KMeans algorithm, without losing the essential variability of the data.
 
-Este processo não visa prever doenças ou comportamentos diretamente, mas agrupar indivíduos com características semelhantes, permitindo futuras análises mais profundas ou aplicações com modelos supervisionados.
+The resulting chart showed that the clusters are clearly separated from each other, with low overlap, which visually validates the proposed segmentation.
 
+This step added value to the analysis by allowing:
 
-## Visualização com PCA
+- Visual validation of the separation between clusters
+- Reinforcement of the quality of the proposed grouping
+- A visual basis for future strategic decisions or in-depth analyses
 
-Para facilitar a interpretação dos clusters formados, apliquei a técnica de Análise de Componentes Principais (PCA), reduzindo a dimensionalidade dos dados de três variáveis (idade, sexo, plano_saude) para dois componentes principais (PCA1 e PCA2).
-
-O objetivo principal foi gerar uma visualização bidimensional dos agrupamentos identificados pelo algoritmo KMeans, sem perder a variabilidade essencial dos dados.
-
-O gráfico resultante mostrou que os clusters estão nitidamente separados entre si, com baixa sobreposição, o que valida visualmente a segmentação proposta.
-
-Essa etapa agregou valor à análise ao permitir:
-
-- Validar visualmente a separação entre os clusters
-- Reforçar a qualidade do agrupamento proposto
-- Fornecer uma base visual para futuras decisões estratégicas ou análises aprofundadas
-
-A visualização por PCA reforçou a validade dos clusters e facilitou a comunicação dos resultados, encerrando esta etapa com uma representação clara e interpretável.
+The PCA visualization reinforced the validity of the clusters and facilitated the communication of the results, closing this stage with a clear and interpretable representation.
