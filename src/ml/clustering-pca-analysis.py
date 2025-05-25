@@ -18,6 +18,7 @@ pacientes_df['idade'] = (data_hoje - pacientes_df['data_nascimento']).dt.days //
 
 pacientes_df['sexo'] = pacientes_df['sexo'].astype(str).str.strip().str.upper()
 
+sexo_map_for_plotting = {'M': 'Masculino', 'F': 'Feminino'}
 pacientes_df['sexo'] = pacientes_df['sexo'].map({'M': 1, 'F': 0})
 
 plano_dict = {
@@ -26,6 +27,7 @@ plano_dict = {
     'Premium': 2
 }
 
+plano_map_for_plotting = {v: k for k, v in plano_dict.items()}
 pacientes_df['plano_saude'] = pacientes_df['plano_saude'].map(plano_dict)
 # %%
 
@@ -61,14 +63,20 @@ plt.grid(True)
 plt.show()
 
 plt.figure(figsize=(8, 5))
-sns.countplot(x='cluster', hue='sexo', data=pacientes_df, palette='Set2')
+sns.countplot(x='cluster', hue=pacientes_df['sexo'].map({0: 'Feminino', 1: 'Masculino'}), data=pacientes_df, palette='Set2')
 plt.title('Distribuição do Sexo por Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Contagem')
+plt.legend(title='Sexo')
 plt.grid(True)
 plt.show()
 
 plt.figure(figsize=(8, 5))
-sns.countplot(x='cluster', hue='plano_saude', data=pacientes_df, palette='Set2')
+sns.countplot(x='cluster', hue=pacientes_df['plano_saude'].map({0: 'Popular', 1: 'Executivo', 2: 'Premium'}), data=pacientes_df, palette='Set2')
 plt.title('Distribuição dos Planos por Cluster')
+plt.xlabel('Cluster')
+plt.ylabel('Contagem')
+plt.legend(title='Plano de Saúde')
 plt.grid(True)
 plt.show()
 # %%
