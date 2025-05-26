@@ -27,6 +27,7 @@ The main objective is to identify hidden patterns that may be useful for:
 ### 2. Choosing the Number of Clusters
 - The Elbow Method was used to evaluate the inertia variation for different values of k (from 1 to 10).
 - A clear inflection point was identified at k=4, which was the value used for clustering.
+![Gráfico do Método do Cotovelo](figures/elbow_method_plot.png)
 
 ### 3. Cluster Results
 After applying the algorithm with k = 4, the following average attributes per cluster were obtained:
@@ -48,7 +49,14 @@ After applying the algorithm with k = 4, the following average attributes per cl
 ### 4. Visualizations
 - Elbow Method chart to justify the k.
 - Boxplot for the Age variable by cluster.
-- Countplots for the Gender and Plan variables by cluster.
+- Countplots for the Sex and Plan variables by cluster.
+
+#### Boxplot da Idade por Cluster
+![Boxplot da Idade por Cluster](figures/idade_por_cluster_boxplot.png)
+
+#### Countplots de Sexo e Plano por Cluster
+![Countplot de Sexo por Cluster](figures/sexo_por_cluster_countplot.png)
+![Countplot de Plano por Cluster](figures/plano_por_cluster_countplot.png)
 
 ## Conclusions
 The clustering was effective in grouping patients with similar characteristics, revealing profiles that can be explored for strategic decisions. This segmentation can also be integrated into future analyses, such as prediction of plan adherence or detection of behavior patterns by group.
@@ -73,5 +81,7 @@ This step added value to the analysis by allowing:
 - Visual validation of the separation between clusters
 - Reinforcement of the quality of the proposed grouping
 - A visual basis for future strategic decisions or in-depth analyses
+
+![Gráfico de PCA dos Clusters](figures/pca_plot.png)
 
 The PCA visualization reinforced the validity of the clusters and facilitated the communication of the results, closing this stage with a clear and interpretable representation.
