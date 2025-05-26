@@ -8,7 +8,7 @@ This document presents the results of the patient clustering step based on their
 Group patients with similar profiles using the following variables:
 
 - Age
-- Gender
+- Sex
 - Health plan
 
 The main objective is to identify hidden patterns that may be useful for:
@@ -32,7 +32,7 @@ The main objective is to identify hidden patterns that may be useful for:
 ### 3. Cluster Results
 After applying the algorithm with k = 4, the following average attributes per cluster were obtained:
 
-| Cluster | Average Age | Gender (0=Fem, 1=Male) | Health Plan (0=Basic, 1=Executive, 2=Premium) |
+| Cluster | Average Age | Sex (0=Fem, 1=Male) | Health Plan (0=Basic, 1=Executive, 2=Premium) |
 |---------|-------------|---------------|--------------|
 | 0       | 70.20       | 1.00          | 0.25         |
 | 1       | 26.91       | 1.00          | 0.20         |
