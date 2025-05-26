@@ -27,6 +27,7 @@ The main objective is to identify hidden patterns that may be useful for:
 ### 2. Choosing the Number of Clusters
 - The Elbow Method was used to evaluate the inertia variation for different values of k (from 1 to 10).
 - A clear inflection point was identified at k=4, which was the value used for clustering.
+
 ![Gráfico do Método do Cotovelo](figures/elbow_method_plot.png)
 
 ### 3. Cluster Results
@@ -40,11 +41,10 @@ After applying the algorithm with k = 4, the following average attributes per cl
 | 3       | 48.52       | 0.00          | 0.00         |
 
 **Cluster Interpretation:**
-
-**Cluster 0: Elderly men with predominance of the Basic plan.**
-**Cluster 1: Young men with predominance of the Basic plan.**
-**Cluster 2: Mostly middle-aged women with predominance of Premium and Executive plans.**
-**Cluster 3: Middle-aged women only with the Basic plan.**
+* **Cluster 0:** Elderly men with predominance of the Basic plan.
+* **Cluster 1:** Young men with predominance of the Basic plan.
+* **Cluster 2:** Mostly middle-aged women with predominance of Premium and Executive plans.
+* **Cluster 3:** Middle-aged women only with the Basic plan.
 
 #### Boxplot for the Age variable by cluster.
 ![Boxplot da Idade por Cluster](figures/idade_por_cluster_boxplot.png)
